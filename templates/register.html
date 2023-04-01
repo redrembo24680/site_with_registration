@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1 class="fs-1 text-muted default_cursor_cs">Форма реєстрації</h1>
+    <main class="form-signin w-100 m-auto default_cursor_cs">
+        <form class="default_cursor_cs" action="" method="post">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <ul>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="Username" placeholder="Username">
+                <label for="floatingPassword">Username</label>
+            </div><br>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"><br>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div><br>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingReturnPassword" placeholder="Return Password">
+                <label for="floatingPassword">Return Password</label>
+            </div>
+
+            <div class="checkbox mb-3 default_cursor_cs">
+                <label class="default_cursor_cs">
+                    <input type="checkbox" value="remember-me"> <p class="fs-6 text-muted default_cursor_cs">Запам'ятати мене</p>
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary default_pointer_cs" type="submit">Зареєстуватись</button>
+        </form>
+    </main>
+</div>
+{% endblock %}
+

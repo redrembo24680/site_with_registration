@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Про мене
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="fs-1 text-muted default_cursor_cs">Про мене</h1>
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark default_cursor_cs">
+    <div class="col-md-6 px-0 default_cursor_cs">
+      <h1 class="display-4 fst-italic default_cursor_cs">Учень GoITeens</h1>
+      <p class="lead my-3 default_cursor_cs">Я вчусь на курсі Python у дуже класній групі PY_1y_2</p>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <img src="{{ url_for('static', filename='img/1.jpg') }}" height="572" width="428" />
+    <img src="{{ url_for('static', filename='img/7.jpg') }}" height="572" width="428" style="float:right"/>
+</div><br>
+<center><img src="{{ url_for('static', filename='img/2.jpg') }}" height="428" width="572" /></center><br>
+<div class="container">
+    <img src="{{ url_for('static', filename='img/3.jpg') }}" height="572" width="428" />
+    <img src="{{ url_for('static', filename='img/4.jpg') }}" height="572" width="428" style="float:right"/>
+</div>
+{% endblock %}

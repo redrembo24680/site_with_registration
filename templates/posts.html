@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Всі статті
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="fs-1 text-muted default_cursor_cs">Усі пости</h1>
+
+    {% if articles|length > 0 %}
+
+        {% for el in articles %}
+        <div class="alert alert-info">
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.intro }}</p>
+            <p><b>Дата {{ el.date.date() }}</b></p>
+            <a href="/post/{{ el.id }}/del" class="btn btn-danger">Видалити</a>
+            <a href="/post/{{ el.id }}/update" class="btn btn-success">Редагувати</a>
+            <a href="/post/{{ el.id }}" class="btn btn-warning">Деталі</a>
+            <a href="/post/{{ el.id }}/comented" class="btn btn-info">Коментувати</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p class="fs-4 text-muted default_cursor_cs">У вас ще немає статтів</p>
+    {% endif %}
+</div>
+{% endblock %}
